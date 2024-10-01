@@ -1,0 +1,77 @@
+:root {
+	font-family: 'Noto Sans Variable', system-ui;
+	--secundary-color: #f6d0d9;
+	--primary-color: #fff;
+	--subject-one-color: #f4b3a4;
+	--subject-two-color: #f7a6b6;
+}
+
+body {
+	margin: 0px;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--secundary-color);
+}
+
+header {
+	padding: 5px;
+	padding-bottom: 1.5em;
+	background-color: var(--secundary-color);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1em 0;
+
+	.top-header {
+		display: flex;
+		gap: 8.5em;
+	}
+}
+
+#sw-time {
+	font-size: 1.5em;
+	font-weight: 700;
+}
+
+main {
+	padding-top: 1em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: white;
+	height: 100vh;
+	border-radius: 15px;
+}
+
+summary span {
+	margin-left: 14em;
+}
+
+summary::marker {
+	content: '';
+}
+
+summary::before {
+	content: '\f144';
+	font-family: 'Font Awesome 6 Free';
+	color: gray;
+	padding: 5px;
+}
+
+details ul {
+	margin-block: 10px;
+}
+
+details li {
+	display: flex;
+	align-items: center;
+}
+
+details li::before {
+	content: '\f111';
+	font-family: 'Font Awesome 6 Free';
+	font-size: 9px;
+	padding: 4px;
+	padding-top: 5px;
+}
