@@ -1,22 +1,8 @@
-disableCloseDetails();
+import './components/tasks-list.js';
 
 const date = new Date();
 const dateElement = document.querySelector('#date');
 dateElement.innerHTML = getTodayDateFormatted(date);
-
-/**
- * To disable capability to close details html elements.
- * @returns {undefined} This function doesn't returns nothig.
- */
-function disableCloseDetails() {
-    const subjectElements = document.querySelectorAll('details');
-
-    subjectElements.forEach((subjectElement) => {
-        subjectElement.addEventListener('click', (event) => {
-            event.preventDefault()
-        })
-    })
-}
 
 /**
  * @param {Date} date
