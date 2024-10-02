@@ -11,8 +11,8 @@ dateElement.innerHTML = getTodayDateFormatted(date);
 function getTodayDateFormatted(date) {
     const dayOfTheWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-    const day = date.getDay();
-    const dayString = dayOfTheWeek[day];
+    const day = date.getDate();
+    const dayString = dayOfTheWeek[date.getDay()];
 
     let month = date.getMonth() + 1;
     if (month < 10) {
