@@ -2,6 +2,16 @@ import { LitElement, html, css } from 'lit';
 
 export class TasksList extends LitElement {
     static styles = css`
+    div {
+        display: flex;
+        align-items: start;
+        gap: 0.3em;
+    }
+
+    div svg {
+        stroke: gray;
+    }
+
     details ul {
         margin-block: 10px;
     }
@@ -9,28 +19,20 @@ export class TasksList extends LitElement {
     details li {
         display: flex;
         align-items: center;
+        gap: 0.3em;
     }
 
-    details li::before {
-        content: '\\f111';
-        font-family: 'Font Awesome 6 Free';
-        font-size: 9px;
-        padding: 4px;
-        padding-top: 5px;
+    details li svg {
+        height: 1em;
+        width: 1em;
     }
+
     summary span {
         margin-left: 14em;
     }
 
     summary::marker {
         content: '';
-    }
-
-    summary::before {
-        content: '\\f144';
-        font-family: 'Font Awesome 6 Free';
-        color: gray;
-        padding: 5px;
     }
     `;
 
@@ -42,19 +44,39 @@ export class TasksList extends LitElement {
     constructor() {
         super();
         this.subject = 'Subject';
-        this.swTime = '00:50:35';
+        this.swTime = '00:00:00';
     }
 
     render() {
         return html`
-    <details open @click=${this.disableCloseDetails}>
-      <summary>${this.subject}
-            <span>${this.swTime}</span>
-      </summary>
-      <ul>
-        <li>Task</li>
-      </ul>
-    </details>
+    <div>
+        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"
+            fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"
+            stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-clock-play">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M12 7v5l2 2" />
+            <path d="M17 22l5 -3l-5 -3z" />
+            <path d="M13.017 20.943a9 9 0 1 1 7.831 -7.292" />
+        </svg>
+        <details open @click=${this.disableCloseDetails}>
+          <summary>${this.subject}
+                <span>${this.swTime}</span>
+          </summary>
+          <ul>
+            <li>
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"
+                      viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"
+                      stroke-linecap="round"  stroke-linejoin="round"
+                      class="icon icon-tabler icons-tabler-outline icon-tabler-square">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M3 3m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" />
+                </svg>
+                Task
+            </li>
+          </ul>
+        </details>
+    </div>
     `;
     }
 
